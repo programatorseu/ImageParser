@@ -1,1 +1,1 @@
-{"version":1,"defects":{"Tests\\ImageParserTest::it_gets_correct_folder":3},"times":{"Tests\\ImageParserTest::it_gets_correct_folder":0.001}}
+{"version":1,"defects":{"Tests\\ImageParserTest::it_gets_correct_folder":3,"Tests\\ImageParserTest::it_changes_file_name":3,"Tests\\ImageParserTest::it_creates_file_name":3},"times":{"Tests\\ImageParserTest::it_gets_correct_folder":0.001,"Tests\\ImageParserTest::it_changes_file_name":0,"Tests\\ImageParserTest::it_get_file_name":0,"Tests\\ImageParserTest::it_creates_file_name":0,"Tests\\ImageParserTest::it_check_file_size":0}}
