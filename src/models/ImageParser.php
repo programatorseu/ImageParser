@@ -1,17 +1,18 @@
 <?php 
-namespace DevPiotr;
+namespace DevPiotr\models;
+
 class ImageParser 
 {
     protected $move = false;
     protected $msg = '';
-    public $uploadPath = 'uploads/';
+    public $uploadPath = '';
     protected $maxSize = 324880;
     // private $allowedTypes = ['image/jpeg', 'image/png',];
-    protected $file = '';
+    public $file = '';
 
-    public function __construct($path, $file) {
-        $this->uploadPath = $path;
+    public function __construct($file, $path = null) {
         $this->file = $file;
+        $this->uploadPath = $path ?? dirname(dirname(__DIR__)) . '/uploads/';
     }
 
     public function createFileName() {
@@ -29,6 +30,11 @@ class ImageParser
     public function checkFileSize($file) 
     {
         return ($file > $this->maxSize) ? 'File is too big' : '';
+    }
+    public function moveImage() 
+    {
+        $image = imagecreatefromjpeg($this->file);
+        return copy($image, $this->uploadPath . $image);
     }
 
 }
